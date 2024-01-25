@@ -1,0 +1,7 @@
+<h1>Login page sahifasi bu </h1>
+Login qilish uchun
+<p>Iltimos shu formani to'ldiring </p>
+<from method="post"> {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</from>

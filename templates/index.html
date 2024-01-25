@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+      <!-- catagary section start -->
+      <div class="catagary_section layout_padding">
+         <div class="container">
+            <div class="catagary_main">
+               <div class="catagary_left">
+                  <h2 class="categary_text">Categary</h2>
+               </div>
+               <div class="catagary_right">
+                  <div class="catagary_menu">
+                     <ul>
+                        <li><a href="#">Man's Fashion</a></li>
+                        <li><a href="#">Woman Fashion</a></li>
+                        <li><a href="#">Beauty</a></li>
+                        <li><a href="#">Mobiles</a></li>
+                        <li><a href="#">Computers</a></li>
+                        <li><a href="#">Watchs</a></li>
+                        <li><a href="#">Kicthen</a></li>
+                        <li><a href="#">Sports</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="catagary_section_2">
+         <div class="container-fluid">
+            <div class="row">
+               {% for cat in categary %}
+               <div class="col-md-4">
+                  <div class="box_man">
+                     <h3  class="mobile_text">{{cat.name}}</h3>
+                     <div class="mobile_img"><img src="{{cat.img.url}}"></div>
+                     <div class="cart_main">
+                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <h4 class="samsung_text">{{cat.model}}</h4>
+                        <h6 class="rate_text"><a href="#">{{cat.price}}</a></h6>
+                        <h6 class="rate_text_1">{{cat.old_prices}}</h6>
+                     </div>
+                  </div>
+               </div>
+              {% endfor %}
+            </div>
+         </div>
+      </div>
+      <!-- catagary section end -->
+      <!-- computers section start -->
+      <div class="computers_section layout_padding">
+         <div class="container">
+            <h1 class="computers_taital">Computers & Laptop</h1>
+         </div>
+      </div>
+      <div class="computers_section_2">
+         <div class="container-fluid">
+            <div class="computer_main">
+               <div class="row">
+                  {% for com in computers %}
+                  <div class="col-md-4">
+                     <div class="computer_img"><img src="{{com.img.url}}"></div>
+                     <h4 class="computer_text">{{com.name}}</h4>
+                     <div>
+                          <a href="{{com.get_absolute_url}}"> {{com.name}}</a>
+                        <h4 class="dell_text">{{com.model}}</h4>
+                        <h6 class="price_text"><a href="#">{{com.price}}</a></h6>
+                        <h6 class="price_text_1"><a href="#">{{com.old_prices}}</a></h6>
+                     </div>
+                     <div class="cart_bt_1"><a href="#">Add To Cart</a></div>
+                  </div>
+                {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- computers section end -->
+      <!-- mans clothes section start -->
+      <div class="mans_section layout_padding">
+         <div class="container">
+            <h1 class="computers_taital">Man’s clothes</h1>
+         </div>
+      </div>
+      <div class="mans_section_2">
+         <div class="container-fluid">
+            <div class="mans_main">
+               <div class="row">
+                  {% for m in man %}
+                  <div class="col-md-6">
+                      <img src="{{m.img.url}}">
+                     <h1 class="offer_text">{{m.name}}</h1>
+                     <p class="lorem_text">{{m.bio}}</p>
+                     <div class="read_bt"><a href="#">Buy Now</a></div>
+                  </div>
+               {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- mans clothes section end -->
+      <!-- womans clothes section start -->
+      <div class="computers_section layout_padding">
+         <div class="container">
+            <h1 class="womans_taital">woman’s clothes</h1>
+            <div class="womans_section_2">
+               <div class="row">
+                   {% for wo in womans %}
+                  <div class="col-md-6">
+                      <img src="{{wo.img.url}}">
+                     <h1 class="Get_offer_text">{{wo.name}} <br>offer Every Iteams</h1>
+                     <div class="read_bt"><a href="#">Buy Now</a></div>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- womans clothes section end -->
+
+{% endblock content %}

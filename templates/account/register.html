@@ -1,0 +1,6 @@
+<h1>Yangi foydalanuvchilarni ro'yxatdan o'tkazish</h1>
+<h1>Ro'yxatdan o'tish uchun iltimos shu formani to'ldiring</h1>
+<form method="post">{% csrf_token %}
+  {{user_form.as_p }}
+  <button type="submit">Ro'yxatdan o'tish</button>
+</form>
